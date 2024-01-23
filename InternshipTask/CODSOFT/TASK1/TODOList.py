@@ -20,16 +20,21 @@ root = tk.Tk()
 root.title("To-Do List")
 root.geometry("400x400")
 
-root.configure(bg="black")
+# Set specific colors
+bg_color = "#22A699"   # Background color
+entry_bg_color = "#F8FAE5"  # Entry box background color
+button_bg_color = "#F24C3D"  # Button background color
 
-entry = tk.Entry(root, width=40, bg="white", fg="black") 
-entry.pack(pady=20)
+root.configure(bg=bg_color)
 
-add_button = tk.Button(root, text="Add Task", command=add_task, bg="#59CE8F", fg="black") 
+add_button = tk.Button(root, text="Add Task", command=add_task, bg=button_bg_color, fg="white") 
 add_button.pack(pady=5)
 
-delete_button = tk.Button(root, text="Delete Task", command=delete_task, bg="#59CE8F", fg="black")  
+delete_button = tk.Button(root, text="Delete Task", command=delete_task, bg=button_bg_color, fg="white")  
 delete_button.pack(pady=5)
+
+entry = tk.Entry(root, width=40, bg=entry_bg_color, fg="black") 
+entry.pack(pady=20)
 
 listbox = tk.Listbox(root, selectmode=tk.SINGLE, width=40, height=10, bg="white", fg="black")  
 listbox.pack(pady=10)
